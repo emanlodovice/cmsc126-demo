@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Name" id="name" required>
+        <br>
+        <label for="color">Color</label>
+        <input type="color" name="skin-color" id="color">
+        <br>
+        <label for="age">Age</label>
+        <input type="number" name="age" min="10" max="100" step="2" id="age">
+        <br>
+        <label for="sex">Sex</label>
+        <input type="radio" name="sex" value="male">Male
+        <input type="radio" name="sex" value="female">Female
+        <br>
+        <label for="height">Height</label>
+        <input type="range" min="20" max="300" name="height" id="height">
+        <br>
+        <label for="grad">Graduating</label>
+        <input type="checkbox" name="graduating" id="grad">
+        <br>
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email">
+        <br>
+        <label for="desc">Description</label>
+        <textarea name="description" id="desc" cols="30" rows="10" placeholder="desc"></textarea>
+        <br>
+        <label for="status">Status</label>
+        <select name="status" id="status" required>
+            <option value="" disabled selected>---</option>
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+        </select>
+        <br>
+        <label for="sport">Sport</label>
+        <input type="text" name="sport" list="sports" id="sport">
+        <datalist id="sports">
+            <option value="Basketball">
+            <option value="Volleyball">
+        </datalist>
+        <br>
+        <label for="progress">Progress</label>
+        <progress value="90" max="100" id="progress">70%</progress>
+        <br>
+        <input type="file" name="file
+</body>
+</html>
