@@ -1,0 +1,38 @@
+* {
+    color: gray;
+}
+
+.sample-class {
+    color: red;
+}
+
+#sample-id {
+    color: blue;
+}
+
+pre {
+    font-weight: bold;
+}
+
+h2, h3, .sample-class {
+    font-family: arial;
+    background-color: #ccc;
+}
+
+div p {
+    font-style: italic;
+}
+
+div > p {
+    font-size: 20px;
+}
+
+[disabled] {
+    background-color: red
+}
+
+[type=text] {
+    color: red;
+    border-radius: 2px;
+    border: 1px solid red;
+}
