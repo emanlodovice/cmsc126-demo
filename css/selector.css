@@ -31,8 +31,24 @@ div > p {
     background-color: red
 }
 
-[type=text] {
+[type=text] {    // input[type=text]
     color: red;
     border-radius: 2px;
     border: 1px solid red;
+}
+
+span p::after {
+    content: "this is after p";
+}
+
+span p::first-letter {
+    color: red;
+}
+
+span p:hover {
+    border: 1px solid red;
+}
+
+div span:nth-child(2n) {
+    color: red;
 }

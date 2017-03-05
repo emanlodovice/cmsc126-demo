@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Gloss And Bloom";
+    src: url("gloss_and_bloom/Gloss_And_Bloom.ttf");
+}
+
+html {
+    font-size: 20px;
+}
+
+main {
+    font-size: 20px;
+}
+
+p.first {
+    font-family: "Gloss And Bloom", sans-serif;
+    color: blue;
+    font-size: 1rem;
+}
+
+p.second {
+    font-family: sans-serif;
+    font-style: italic;
+}
+
+.has-background {
+    background-image: url("test.jpg");
+    // background-color: #CCCCCC;
+    width: 500px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box {
+    display: block;
+    border: 1px solid red;
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.left {
+    float: left;
+}
+
+.overflow {
+    display: block;
+    width: 500px;
+    height: 100px;
+    clear: both;
+    overflow: visible;
+    border: 1px solid red;
+}
+
+@media screen and (max-width: 700px){
+    p {
+        display: none;
+    }
+}
+
