@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+        <style>
+            .red {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="my-h1">DOM</h1>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <a href="http://www.example.com">Go to example</a>
+
+        <script>
+            var myH1 = document.querySelector('.my-h1');
+            console.log(myH1);
+            myH1.textContent = 'Your h1';
+            myH1.className += ' red';
+
+            var myP = document.createElement('p');
+            myP.textContent = 'this is the p we created';
+            var body = document.querySelector('body');
+            body.appendChild(myP);
+
+
+            // js events
+            var buttons = document.querySelectorAll('button');
+            for(var i=0; i < buttons.length; i++) {
+                buttons[i].addEventListener('mouseover', function(event) {
+                    this.textContent = 'hey ' + i;
+                    this.style.background = 'white';
+                });
+            }
+
+            function buttonChangeColor(event) {
+                var button = this;
+                button.style.background = 'red';
+                button.removeEventListener('click',buttonChangeColor);
+            }
+
+            buttons[0].addEventListener('click', buttonChangeColor);
+
+            var myLink = document.querySelector('a');
+            myLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                alert('atik ra');
+            })
+
+        </script>
+
+    </body>
+</html>

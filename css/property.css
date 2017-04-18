@@ -14,7 +14,7 @@ main {
 p.first {
     font-family: "Gloss And Bloom", sans-serif;
     color: blue;
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 p.second {
@@ -28,21 +28,24 @@ p.second {
     width: 500px;
     height: 500px;
     background-repeat: no-repeat;
-    background-size: cover;
+    /*background-repeat: repeat-y;*/
+    /*background-size: cover;*/
+    border: 1px solid red;
+    background-position: 10px 50px;
 }
 
 .box {
     display: block;
     border: 1px solid red;
-    margin-top: 10px;
+    margin: 10px 20px;
     width: 100px;
     height: 100px;
-    margin: 10px auto;
+    margin: 20px auto;
     padding: 10px;
 }
 
 .left {
-    float: left;
+    float: right;
 }
 
 .overflow {
@@ -50,13 +53,63 @@ p.second {
     width: 500px;
     height: 100px;
     clear: both;
-    overflow: visible;
+    overflow: scroll;
     border: 1px solid red;
 }
 
 @media screen and (max-width: 700px){
     p {
         display: none;
+    }
+}
+
+.animate-me {
+    background-color: red;
+    color: white;
+}
+
+.animate-me:hover {
+    animation-name: change-width;
+    animation-duration: 500ms;
+    animation-delay: 200ms;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+.transition-me {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 100px;
+    background-color: red;
+    transition-property: height;
+    transition-duration: 800ms;
+}
+
+.transition-me:hover {
+    height: 250px;
+}
+
+
+
+@keyframes change-width {
+    from {
+        width: 100%;
+    }
+    50% {
+        width: 50%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes change-color {
+    from {
+        background-color: blue;
+    }
+    to {
+        background-color: red;
     }
 }
 

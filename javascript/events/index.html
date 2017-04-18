@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>JS Events</title>
+    </head>
+    <body>
+        <h1 onmouseover="">JS Events</h1>
+
+        <!-- General Format -->
+        <button on[event]="yourScript">Click Me</button>
+
+        <!-- Sample 1 -->
+        <button onclick="alert('clicked')">Click Me</button>
+
+        <!-- Sample 2 -->
+        <button onclick="myScript(event)">Click Me</button>        
+
+        <script>
+            function myScript(e) {
+                alert('clicked');
+            }
+        </script>
+
+        <br />
+
+        <button id="my-button">Click Me 1</button>
+
+        <button>Click Me 2</button>
+
+        <button>Click Me 3</button>
+
+        <script>
+            var myButton = document.getElementById('my-button');
+            myButton.addEventListener('click', function(event) {
+                alert('clicked');
+            });
+
+            var buttons = document.getElementsByTagName('button');
+            for(var i=0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function(event) {
+                    alert('this worked');
+                });
+
+                buttons[i].onclick = function(event) {
+                    alert('this worked too');
+                };
+            }
+        </script>
+
+        <br>
+
+        <button id="my-button-4">Click Me 4</button>
+
+        <script>
+            var button4 = document.getElementById('my-button-4');
+
+            function button4Handler(event) {
+                alert('button 4 clicked');
+                button4.removeEventListener('click', button4Handler);
+            }
+
+            button4.addEventListener('click', button4Handler);
+        </script>
+
+
+        <button id="my-button-5">Click Me 5</button>
+        <script>
+            var clickEvent = new Event('click');
+            var button5 = document.getElementById('my-button-5');            
+            button5.addEventListener('click', function(event) {
+                alert('clicked here bro');
+            });
+
+            // button5.dispatchEvent(clickEvent);
+        </script>
+
+        <br>
+
+        <button id="my-button-6">Click Me 6</button>
+        <script>
+            var myCustomEvent = new CustomEvent('myCustomEvent',
+                {detail: {secret: 'my secret'}});
+            var button6 = document.getElementById('my-button-6');            
+            button6.addEventListener('myCustomEvent', function(event) {
+                alert(event.detail.secret);
+            });
+
+            // button6.dispatchEvent(myCustomEvent);
+        </script>
+
+        <br>
+
+        <a href="http://www.example.com">Example</a>
+        <script>
+            var link = document.querySelector('a');
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                var url = this.href;
+                alert(url);
+            })
+        </script>
+
+    </body>
+</html>
