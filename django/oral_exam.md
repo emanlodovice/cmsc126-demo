@@ -1,7 +1,13 @@
 # Oral Exam
 
-## 1. How do you turn a directory to a python package?
+```python
+class Post(models.Model):
+    content = models.CharField(max_length=10)
+    created = models.DateTimeField(auto_now_add=True)
+```
 
-## 2. What are django models for?
+## 1. Create a new post with content = 'Test'
 
-## 3. How do you start a new django project?
+## 2. Get the most recent post
+
+## 3. What is the `render` function for?

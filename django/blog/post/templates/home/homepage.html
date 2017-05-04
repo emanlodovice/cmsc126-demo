@@ -5,6 +5,12 @@
         <link rel="stylesheet" href="{% static 'homepage/homepage.css' %}">
     </head>
     <body>
-        <h1>THis is the Homepage</h1>
+        <h1>Welcome to my homepage</h1>
+        <h2>Posts</h2>
+        <ul>
+            {% for post in posts %}
+                <li><a href='{% url "post-detail" post.pk %}'>{{ post.content }}</a></li>
+            {% endfor %}
+        </ul>
     </body>
 </html>

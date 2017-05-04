@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        Login
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <p>{{ error }}</p>
+            <input type="text" name="username" value="{{ username }}">
+            <input type="password" name="password">
+            <button>Login</button>
+        </form>
+    </body>
+</html>

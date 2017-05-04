@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="{% static 'home.css' %}">
     </head>
     <body>
+        {{ user.username }}
         <h1>This is the Homepage</h1>
         {% for post in posts %}
             <p>{{ post.content }}</p>
