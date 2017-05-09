@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+    <head>
+        <title>Post Detail</title>
+        <link rel="stylesheet" href="{% static 'homepage/page.css' %}">
+    </head>
+    <body>
+        {% include 'home/header.html' %}
+        <p>{{ post.render_shortcut }}</p>
+        <p>by {{ post.owner.username }}</p>
+        <p>with {{ post.likes_counter }} likes</p>
+        <p>created: {{ post.when_created }} </p>
+        
+    </body>
+</html>

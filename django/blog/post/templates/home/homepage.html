@@ -1,16 +1,22 @@
-{% load static %}
-<html>
-    <head>
-        <title>Homepage</title>
-        <link rel="stylesheet" href="{% static 'homepage/homepage.css' %}">
-    </head>
-    <body>
-        <h1>Welcome to my homepage</h1>
-        <h2>Posts</h2>
-        <ul>
-            {% for post in posts %}
-                <li><a href='{% url "post-detail" post.pk %}'>{{ post.content }}</a></li>
-            {% endfor %}
-        </ul>
-    </body>
-</html>
+{% extends "home/base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block styles %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'homepage/homepage.css' %}">
+{% endblock %}
+
+{% block page_content %}
+<h2>Posts</h2>
+    <form action="{% url 'post-create' %}" method="POST">
+        {% csrf_token %}
+        <textarea name="content" id="" cols="30" rows="2"></textarea>
+        <button>Post</button>
+    </form>
+<ul>
+    {% for post in posts %}
+        <li><a href='{% url "post-detail" post.pk %}'>{{ post.content }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

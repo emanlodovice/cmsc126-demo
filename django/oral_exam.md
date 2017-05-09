@@ -1,13 +1,15 @@
 # Oral Exam
 
-```python
-class Post(models.Model):
-    content = models.CharField(max_length=10)
-    created = models.DateTimeField(auto_now_add=True)
+## 1. What is the purpose of naming urls?
+
+``` python
+if request.user.is_authenticated:
+    return redirect('homepage')
 ```
+## 2. What will the code above do?
 
-## 1. Create a new post with content = 'Test'
+## 3. In your view function, how do you access the data (values in the form) sent in a POST request?
 
-## 2. Get the most recent post
+## 4. What will `get_object_or_404(Post, pk=1)` do?
 
-## 3. What is the `render` function for?
+## 5. Give an example of a url that matches this pattern `r'^post/(?P<post_id>\d+)/$'`.

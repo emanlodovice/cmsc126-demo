@@ -11,5 +11,9 @@ class Post(models.Model):
     likes_counter = models.IntegerField(default=0)
     when_created = models.DateTimeField(auto_now_add=True)
 
+    def render_shortcut(self):
+        return '{} by {}'.format(
+            self.content, self.owner.username)
+
     def __unicode__(self):
         return self.content
